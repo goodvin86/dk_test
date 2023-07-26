@@ -1,0 +1,3 @@
+<?php //Doctrine%255CORM%255CTools%255CConsole%255CCommand%255CSchemaTool%255CDropCommand
+
+return [PHP_INT_MAX, []];

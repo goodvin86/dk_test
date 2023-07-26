@@ -1,0 +1,3 @@
+<?php //%5BC%5DDoctrine%255CMigrations%255CTools%255CConsole%255CCommand%255CVersionCommand
+
+return [PHP_INT_MAX, 1690344309];

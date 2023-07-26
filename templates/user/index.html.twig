@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Пользователи{% endblock %}
+
+{% block body %}
+
+        <div class="h-content">
+            <div class="operations">
+                <a href="{{ path('app_user_xlsx') }}">
+                    <button class="button btn btn-sm">Выгрузить в .xlsx</button>
+                </a>
+            </div>
+
+            <div class="caption">
+                Пользователи
+            </div>
+            <div class="operations">
+                <a href="{{ path('app_user_new') }}">
+                    <button class="button btn btn-sm">Добавить</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="table_div">
+            <div class="thead_div">
+                <div class="row_div">
+                    <div class="cell_thead_div_id">Id</div>
+                    <div class="cell_thead_div">Фамилия</div>
+                    <div class="cell_thead_div">Имя</div>
+                    <div class="cell_thead_div">Отчество</div>
+                    <div class="cell_thead_div">Дата рождения</div>
+                    <div class="cell_thead_div">Город</div>
+                    <div class="cell_thead_div">Погода в городе</div>
+                    <div class="cell_thead_div">Роль</div>
+                    <div class="cell_thead_div_oper">Операции</div>
+                </div>
+            </div>
+
+            <div class="tbody_div">
+                {% for user in users %}
+                    <div class="row_div" id="row_{{ user.id }}">
+                        <div class="cell_thead_div_id">{{ user.id }}</div>
+                        <div class="cell_thead_div">{{ user.lastname }}</div>
+                        <div class="cell_thead_div">{{ user.firstname }}</div>
+                        <div class="cell_thead_div">{{ user.patronymic }}</div>
+                        <div class="cell_thead_div">{{ user.birthday|date('d.m.Y') }}</div>
+                        <div class="cell_thead_div">{{ user.city }}</div>
+                        <div class="cell_thead_div">{{ user.weather }}</div>
+                        <div class="cell_thead_div">{{ user.role }}</div>
+                        <div class="cell_div_oper">
+                            <div>
+                                <a href="{{ path('app_user_edit', {'id': user.id}) }}">
+                                    <button class="btn btn-secondary btn-sm button_edit">Изменить</button>
+                                </a>
+                            </div>
+                            <div {{ stimulus_controller('submit-confirm-jq', {
+                                title: "Удалить пользователя?",
+                                text: user.lastname,
+                                formUrl: path('app_user_delete', {'id': user.id})
+                            }) }}>
+                                <button
+                                        class="btn btn-secondary btn-sm button_delete"
+                                        data-action="submit-confirm-jq#onSubmit">
+                                    Удалить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="row_empty">
+                        Записи не найдены
+                    </div>
+                {% endfor %}
+            </div>
+
+
+
+        </div>
+
+{% endblock %}

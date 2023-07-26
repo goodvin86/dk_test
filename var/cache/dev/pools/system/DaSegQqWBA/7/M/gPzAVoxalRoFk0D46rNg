@@ -1,0 +1,3 @@
+<?php //Doctrine%255CORM%255CTools%255CConsole%255CCommand%255CClearCache%255CCollectionRegionCommand
+
+return [PHP_INT_MAX, []];

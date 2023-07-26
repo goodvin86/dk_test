@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Роли{% endblock %}
+
+{% block body %}
+
+    <div class="h-content">
+        <div class="operations">
+
+        </div>
+
+        <div class="caption">
+            Роли
+        </div>
+        <div class="operations">
+
+        </div>
+    </div>
+
+    <div class="table_div">
+        <div class="thead_div">
+            <div class="row_div">
+                <div class="cell_thead_div_id">Id</div>
+                <div class="cell_thead_div">Роль</div>
+            </div>
+        </div>
+
+        <div class="tbody_div">
+            {% for role in roles %}
+                <div class="row_div" id="row_{{ role.id }}">
+                    <div class="cell_thead_div_id">{{ role.id }}</div>
+                    <div class="cell_thead_div">{{ role.name }}</div>
+                </div>
+            {% else %}
+                <div class="row_empty">
+                    Записи не найдены
+                </div>
+            {% endfor %}
+        </div>
+
+
+
+    </div>
+
+{% endblock %}

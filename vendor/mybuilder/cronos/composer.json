@@ -1,0 +1,42 @@
+{
+    "name": "mybuilder/cronos",
+    "description": "Configure Cron task through PHP",
+    "keywords": ["php", "cron"],
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gavin Love",
+            "homepage": "https://www.mybuilder.com"
+        },
+        {
+            "name": "Keyvan Akbary",
+            "homepage": "https://www.mybuilder.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.2",
+        "symfony/process": "^4.4|^5.4|^6.0"
+    },
+    "suggest": {
+        "symfony/filesystem": "Allows using Symfony Filesystem"
+    },
+    "require-dev": {
+        "symfony/filesystem": "^4.4|^5.4|^6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": { "MyBuilder\\Cronos\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "MyBuilder\\Cronos\\Tests\\": "tests/" }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0-dev"
+        }
+    }
+}

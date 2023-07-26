@@ -1,0 +1,27 @@
+bw_active_menu_item_index:
+    pattern:  /index
+    defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
+
+bw_active_menu_item_catalog:
+    pattern:  /catalog
+    defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
+
+bw_active_menu_item_video:
+    pattern:  /catalog/video
+    defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
+
+bw_active_menu_item_tragedy:
+    pattern:  /catalog/video/tragedy
+    defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
+
+bw_active_menu_item_comedy:
+    pattern:  /catalog/video/comedy
+    defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
+
+bw_active_menu_item_tragicomedy:
+    pattern:  /catalog/video/tragicomedy
+    defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
+
+bw_active_menu_item_audio:
+    pattern:  /catalog/audio
+    defaults: { _controller: BWActiveMenuItemBundle:Demo:index }

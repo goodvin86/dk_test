@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Тест{% endblock %}</title>
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+       {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    <div class="main">
+        <div class="menu">
+            <nav class="sidebar">
+                <div class="text">Тест</div>
+                <ul class="main_side">
+                    <li class="{{'app_user'|is_active }}">
+                        <a href="{{ path('app_user')}}" id="1">Пользователи</a>
+                    </li>
+                    <li class="{{'app_role'|is_active }}">
+                        <a href="{{ path('app_role')}}" id="2">Роли</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+    </body>
+</html>
