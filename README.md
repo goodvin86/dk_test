@@ -7,4 +7,4 @@ https://docs.docker.com/engine/install/) и Docker Compose (официальна
 3. Зайдите в браузер и введите адрес: 127.0.0.1.
 4. Проект запущен.
 
-* Команда по по выгрузке пользователей в .xlsx (с сохранением в диретории public/excel): bin/console app:usertoexcel
+*  Команда по выгрузке пользователей в .xlsx (с сохранением в диретории public/excel): bin/console app:usertoexcel
